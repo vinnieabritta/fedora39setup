@@ -100,6 +100,10 @@ echo ">>>>Installing Basic Software"
 	#####flatpak install -y flathub org.qbittorrent.qBittorrent
 	sudo dnf copr enable -y jerrycasiano/FontManager
 	sudo dnf install -y font-manager
+ 	sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+  	sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+   	sudo dnf install -y sublime-text
+    	sudo dnf install -y sublime-merge
 echo ">>>Chrome,Discord,Spotify,Font-Manager; INSTALLED 7/11"
 	sleep 2
 
