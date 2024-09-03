@@ -8,8 +8,7 @@ echo "Is this a laptop, (1)YES, (0)NO?"
 read -r laptopyn
 echo "the CPU is INTEL(1) or AMD(0)"
 read -r cpu
-echo "Do you have a Nvidia GPU? (1)YES, (0)NO"
-read -r gpu
+
 		
 		####echo "If you would like to reenter the information type (1)YES; (2)NO"
 		####read -r again
@@ -47,11 +46,11 @@ echo ">>>>You are up to date 1/11"
 echo ">>>>Installing Kitty terminal"
 	sudo dnf -y install wget
 	sudo dnf -y install vim
-	sudo dnf -y install neovim
-	sudo dnf -y install kitty
+#	sudo dnf -y install neovim
+#	sudo dnf -y install kitty
 #conf file missing the correct font:.Iosevak
-	sudo cp -r ~/basicfedorasetup/kitty.conf ~/.config/kitty/
-echo ">>>>Kitty INSTALLED and setup 2/11"
+#	sudo cp -r ~/basicfedorasetup/kitty.conf ~/.config/kitty/
+#echo ">>>>Kitty INSTALLED and setup 2/11"
 
 
 #Enabling rpm-fusion & flatpak Repositories
@@ -71,8 +70,8 @@ echo ">>>>Installing essentials"
 	flatpak install flathub -y com.mattjakeman.ExtensionManager
 	sudo dnf install -y unzip p7zip p7zip-plugins unrar
 	sudo dnf install -y gnome-tweaks
-	sudo dnf install -y gimp
-	sudo dnf install -y gimp-devel
+#	sudo dnf install -y gimp
+#	sudo dnf install -y gimp-devel
 	sudo dnf install -y nautilus-python
 	sudo rpm -i --force https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 echo ">>>>google-roboto mozilla-firra,flathpak,unzip,gnome-tweaks,gimp,nautilus-python; INSTALLED 5/11"
@@ -84,10 +83,10 @@ echo ">>>>Installing Commands"
 	sudo dnf install -y sysstat
 	sudo dnf install -y htop
 	sudo dnf install -y copr-cli
-	rpm -q cronie
-	rpm -q cronie-anacron
-	sudo dnf install -y cronie
-	sudo dnf install -y cronie-anacron
+#	rpm -q cronie
+#	rpm -q cronie-anacron
+#	sudo dnf install -y cronie
+#	sudo dnf install -y cronie-anacron
 echo ">>>>tmux,iostat,htop,copr-cli,cronie,cronie-anacron; INSTALLED 6/11"
 
 
@@ -100,27 +99,23 @@ echo ">>>>Installing Basic Software"
 	#####flatpak install -y flathub org.qbittorrent.qBittorrent
 	sudo dnf copr enable -y jerrycasiano/FontManager
 	sudo dnf install -y font-manager
- 	sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
-  	sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
-   	sudo dnf install -y sublime-text
-    	sudo dnf install -y sublime-merge
 echo ">>>Chrome,Discord,Spotify,Font-Manager; INSTALLED 7/11"
 	sleep 2
 
 
 #Intalling Docker engine & desktop
-echo ">>>>Installing Docker and Docker-Desktop"
-	sudo dnf remove -y docker docker-engine docker-client docker-common docker-logrotate docker-latest
-	sudo wget -r https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker & utm_medium=webreferral & utm_campaign=docs-driven-download-linux-amd64
-	sudo dnf install -y dnf-plugins-core
-	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-	sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-	sudo systemctl --force start docker
-	sudo systemctl --force enable docker
-	sudo dnf install -y ./Downloads/docker-desktop-x86_64.rpm
+#echo ">>>>Installing Docker and Docker-Desktop"
+#	sudo dnf remove -y docker docker-engine docker-client docker-common docker-logrotate docker-latest
+#	sudo wget -r https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm?utm_source=docker & utm_medium=webreferral & utm_campaign=docs-driven-download-linux-amd64
+#	sudo dnf install -y dnf-plugins-core
+#	sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+#	sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+#	sudo systemctl --force start docker
+#	sudo systemctl --force enable docker
+#	sudo dnf install -y ./Downloads/docker-desktop-x86_64.rpm
 		###to upgrade your Docker Desktop for Linux app, you need to download the latest package and run:
 		###sudo dnf install ./docker-desktop-<version>-<arch>.rpm
-echo ">>>>Docker INTALLED 8/11"
+#echo ">>>>Docker INTALLED 8/11"
 
 
 #If marked as 1(YES), then installing battery optimization for laptops
