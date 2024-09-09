@@ -43,9 +43,9 @@ echo ">>>>You are up to date 1/11"
 
 
 #Downloading, Installing & Cp already customized conf file to correct path
-echo ">>>>Installing Kitty terminal"
-	sudo dnf -y install wget
-	sudo dnf -y install vim
+#echo ">>>>Installing Kitty terminal"
+#	sudo dnf -y install wget
+#	sudo dnf -y install vim
 #	sudo dnf -y install neovim
 #	sudo dnf -y install kitty
 #conf file missing the correct font:.Iosevak
